@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: smart-service
+spec:
+  selector:
+    app: smartapp   #i must use the same lebel as mentioned in deployment
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 8081
+  type: ClusterIP

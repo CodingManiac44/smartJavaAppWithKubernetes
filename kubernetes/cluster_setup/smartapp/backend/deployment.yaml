@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartapp
+  template:
+    metadata:
+      labels:
+        app: smartapp
+    spec:
+      containers:
+        - name: smart-container
+          image: saidurnsu/smart:latest   # name of my applications docker image
+          ports:
+            - containerPort: 8081
+
